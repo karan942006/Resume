@@ -229,6 +229,30 @@
       color: #d1d5db;
     }
 
+    .download-section {
+  text-align: center;
+  margin-top: 25px;
+  padding-bottom: 30px;
+}
+
+.download-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+}
+
+.download-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
     a {
       color: #0077ff;
       text-decoration: none;
@@ -523,6 +547,17 @@
 
     </main>
   </div>
+  <!-- Download PDF Section -->
+<div class="download-section">
+  <a 
+    href="https://raw.githubusercontent.com/karan942006/Resume/main/KaranLingayat%20Resume.pdf" 
+    download
+    class="download-btn"
+    target="_blank"
+  >
+    Download Resume as PDF
+  </a>
+</div>
 
   <script>
     document.querySelectorAll('.fade-in').forEach((element) => {
