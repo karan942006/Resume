@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karan Ganesh Lingayat - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e5e7eb;
+      color: #111827;
+      padding: 30px;
+    }
+
+    .resume {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      min-height: 100vh;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+
+    .sidebar {
+      position: relative;
+      background: #111827;
+      color: #fff;
+      padding: 40px 30px;
+    }
+
+    .profile-section {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 35px;
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(255,255,255,0.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      background: #1f2937;
+      object-position: center top;
+    }
+
+    .main {
+      padding: 40px 45px;
+    }
+
+    .section {
+      margin-bottom: 35px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #0073ff;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .sidebar .section-title {
+      color: #93c5fd;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 10px;
+    }
+
+    .contact-item,
+    .skill-item,
+    .edu-item,
+    .availability-item,
+    .link-item {
+      margin-bottom: 15px;
+    }
+
+    .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #9ca3af;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .value {
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .skill-category {
+      margin-bottom: 22px;
+    }
+
+    .skill-category h4 {
+      font-size: 13px;
+      color: #bfdbfe;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .skill-list {
+      list-style: none;
+    }
+
+    .skill-list li {
+      font-size: 14px;
+      margin-bottom: 7px;
+      position: relative;
+      padding-left: 14px;
+      color: #e5e7eb;
+    }
+
+    .skill-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #60a5fa;
+    }
+
+    .name {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #111827;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .role {
+      font-size: 18px;
+      color: #2563eb;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+
+    .summary {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #374151;
+      text-align: justify;
+    }
+
+    .project {
+      margin-bottom: 28px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .project-date {
+      font-size: 14px;
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    .stack {
+      font-size: 14px;
+      color: #0051ff;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .bullet-list {
+      padding-left: 22px;
+    }
+
+    .bullet-list li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+      color: #374151;
+      font-size: 15px;
+    }
+
+    .highlights li,
+    .why-hire p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #374151;
+    }
+
+    .why-hire {
+      background: #f3f4f6;
+      padding: 24px;
+      border-left: 5px solid #2563eb;
+      border-radius: 10px;
+    }
+
+    .edu-item h4 {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .edu-item p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #d1d5db;
+    }
+
+    a {
+      color: #0077ff;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.4s; }
+    .fade-in:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .resume {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        padding: 30px 25px;
+      }
+
+      .main {
+        padding: 30px 25px;
+      }
+
+      .name {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 0;
+      }
+
+      .resume {
+        border-radius: 0;
+      }
+
+      .project-header {
+        flex-direction: column;
+      }
+
+      .name {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <aside class="sidebar">
+
+      <div class="profile-section fade-in">
+        <img src="https://karan942006.github.io/portfolio/profilepic.jpeg" alt="Karan Profile Photo" class="profile-pic">
+      </div>
+
+      <div class="section fade-in">
+        <div class="section-title">Contact</div>
+
+        <div class="contact-item">
+          <div class="label">Phone</div>
+          <div class="value">+91 8446458623</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <div class="value">karan942006@gmail.com</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Location</div>
+          <div class="value">Devrukh, Ratnagiri<br>Maharashtra, India</div>
+        </div>
+      </div>
+
+      <div class="section fade-in">
+        <div class="section-title">Links</div>
+
+        <div class="link-item value">
+          <a href="https://www.linkedin.com/in/karan-lingayat-066420330 " target="_blank">LinkedIn Profile</a>
+        </div>
+
+        <div class="link-item value">
+          <a href="https://github.com/karan942006" target="_blank">GitHub Portfolio</a>
+        </div>
+
+        <div class="link-item value">
+          <a href="https://karan942006.github.io/portfolio/" target="_blank">Portfolio Website</a>
+        </div>
+      </div>
+
+      <div class="section fade-in">
+        <div class="section-title">Skills</div>
+
+        <div class="skill-category">
+          <h4>LANGUAGES</h4>
+          <ul class="skill-list">
+            <li>Kotlin</li>
+            <li>Java</li>
+            <li>Python (Basics)</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h4>ANDROID</h4>
+          <ul class="skill-list">
+            <li>Android Studio</li>
+            <li>Firebase Auth & DB</li>
+            <li>API Integration</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h4>TOOLS & OTHER</h4>
+          <ul class="skill-list">
+            <li>GitHub / Git</li>
+            <li>App Security & Encryption</li>
+            <li>DSA Problem Solving</li>
+            <li>UI/UX Design</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section fade-in">
+        <div class="section-title">Education</div>
+
+        <div class="edu-item">
+          <h4>B.E. — CSE (Cyber Security)</h4>
+          <p>Finolex Academy of Management & Technology</p>
+          <p>Aug 2024 – May 2028</p>
+        </div>
+
+        <div class="edu-item">
+          <h4>12th Grade</h4>
+          <p>G.K. Sapre College — 60%</p>
+          <p>2024</p>
+        </div>
+
+        <div class="edu-item">
+          <h4>10th Grade</h4>
+          <p>New English School — 74.60%</p>
+          <p>2022</p>
+        </div>
+      </div>
+
+      <div class="section fade-in">
+        <div class="section-title">Availability</div>
+
+        <div class="availability-item value">
+          Open to Internship<br>
+          Remote / On-site<br>
+          Preferred: Ratnagiri, Kolhapur, Mumbai, Pune
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section class="fade-in">
+        <h1 class="name">Karan Ganesh Lingayat</h1>
+        <div class="role">Android Developer | Kotlin & Firebase | Mobile App Builder</div>
+        <div class="subtitle">Seeking Android Developer Internship · Available</div>
+      </section>
+
+      <section class="section fade-in">
+        <div class="section-title">Professional Summary</div>
+        <p class="summary">
+          Computer Science Engineering student (Cyber Security) at Finolex Academy of
+          Management & Technology with proven hands-on experience building production-quality
+          Android applications. Developed two end-to-end Android projects: a GPS-based
+          real-time attendance system with anti-proxy logic and an encrypted messaging
+          application — both deployed on Firebase. Committed to writing clean, secure,
+          and scalable Kotlin code with a strong focus on user-centric design and backend integration.
+        </p>
+      </section>
+
+      <section class="section fade-in">
+        <div class="section-title">Projects</div>
+
+        <div class="project">
+          <div class="project-header">
+            <div class="project-title">CivicTrack · GPS-Based Smart Attendance System</div>
+            <div class="project-date">2024 – Present</div>
+          </div>
+
+          <div class="stack">Stack: Kotlin · Android Studio · Firebase · GPS API · <u><a href="https://karan942006.github.io/civictrackapp/" target="_blank">Live Demo Link</a></u></div>
+
+          <ul class="bullet-list">
+            <li>
+              Engineered real-time GPS location verification to authenticate attendance,
+              eliminating proxy fraud with custom anti-proxy detection logic.
+            </li>
+            <li>
+              Designed and integrated a Firebase Realtime Database backend for instant data sync
+              across student and admin interfaces.
+            </li>
+            <li>
+              Built a full admin dashboard supporting live monitoring, attendance analytics,
+              and multi-user management.
+            </li>
+            <li>
+              Applied secure data-handling practices aligned with app security principles studied in
+              Cyber Security curriculum.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <div class="project-title">CryptoTalk · End-to-End Encrypted Messaging App</div>
+            <div class="project-date">2024</div>
+          </div>
+
+          <div class="stack">Stack: Kotlin · Android Studio · Firebase · Encryption · Material Design · <u><a href="https://karan942006.github.io/CryptoTalkApp/" target="_blank">Live Demo Link</a></u></div>
+
+          <ul class="bullet-list">
+            <li>
+              Architected a privacy-first messaging application featuring end-to-end encryption
+              concepts to ensure confidential communication.
+            </li>
+            <li>
+              Delivered a minimal, intuitive Material Design UI optimised for usability and engagement.
+            </li>
+            <li>
+              Integrated Firebase Authentication and Realtime Database for seamless real-time
+              message delivery and secure user management.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section fade-in">
+        <div class="section-title">Key Highlights & Achievements</div>
+
+        <ul class="bullet-list highlights">
+          <li>
+            Participated in multiple Hackathons and Project Competitions focused on Android
+            Development, Cyber Security, and innovative mobile solutions.
+          </li>
+          <li>
+            Both Android projects are live, publicly accessible, and listed on GitHub —
+            demonstrating real-world deployment experience.
+          </li>
+          <li>
+            Pursuing specialisation in Cyber Security, directly applicable to building secure,
+            production-grade Android applications.
+          </li>
+          <li>
+            Completed JEE Mains 2024, demonstrating strong quantitative and analytical aptitude.
+          </li>
+          <li>
+            Strong interest in competitive problem-solving, UI/UX design, and scalable mobile app development.
+          </li>
+          <li>
+            Deployed 2 complete Android applications as a second-year student,
+            available live via GitHub Pages.
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in">
+        <div class="section-title">Why Hire Me</div>
+
+        <div class="why-hire">
+          <p>
+            I am not just a student who writes code — I build complete, deployable applications.
+            My two Android projects demonstrate the full development lifecycle: problem definition,
+            architecture, backend integration, security, UI design, and deployment.
+            I learn fast, work independently, and am deeply passionate about Android and mobile technology.
+            I will bring initiative, reliability, and real engineering skills from day one of my internship.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    document.querySelectorAll('.fade-in').forEach((element) => {
+      element.style.opacity = '0';
+    });
+
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.fade-in').forEach((element) => {
+        element.style.opacity = '1';
+      });
+    });
+
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        link.style.transform = 'translateX(4px)';
+      });
+
+      link.addEventListener('mouseleave', () => {
+        link.style.transform = 'translateX(0px)';
+      });
+    });
+  </script>
+</body>
+</html>
